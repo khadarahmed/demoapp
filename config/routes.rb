@@ -1,9 +1,7 @@
 Demoapp::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
-  get "staticpages/home"
-  get "staticpages/help"
-  resources :users
+  root 'static_pages'
+  match '/help', to: 'static_pages#help', via: 'get'
+   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
